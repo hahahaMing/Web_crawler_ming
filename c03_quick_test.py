@@ -14,3 +14,4 @@ test_url = "http://www.biquge.info/40_40050"
 r = requests.get(test_url, verify=False)
 s = r.text.encode(r.encoding).decode('utf-8')
 print(s)
+print('ss')
