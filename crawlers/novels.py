@@ -168,3 +168,5 @@ class biquge():
                     s = f.read()
                     final_f.write(s)
                     final_f.write('\n')
+
+## 笔趣阁2 http://m.biquge.info/
