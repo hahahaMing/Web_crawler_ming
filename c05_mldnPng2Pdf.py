@@ -16,16 +16,17 @@ def cmpFolder(a,b):
     return int(a.split("课时")[1].split("【")[0])-int(b.split("课时")[1].split("【")[0])
 
 folders.sort(key=functools.cmp_to_key(cmpFolder))
-c = canvas.Canvas("hello.pdf")
+c = canvas.Canvas(OUTPUT_FILE)
 c.setPageSize((1839,2599))
-chapterNum = 0
+chapterNum = 1
 for folder in folders:
     pngs = os.listdir(os.path.join(INPUT_FOLDER, folder))
+    chapterName = str(chapterNum)+'. '+ folder.split("】")[1]
     # 想把文件夹信息创建一页pdf
     c.setFont('Heiti', 50)
-    c.drawRightString(1839-200, 1300, text=folder)
+    c.drawRightString(1839-200, 1300, text=chapterName)
     c.bookmarkPage(str(chapterNum))
-    c.addOutlineEntry(folder, str(chapterNum))
+    c.addOutlineEntry(chapterName, str(chapterNum))
     c.bookmarkPage(str(chapterNum))
     c.showPage()
     chapterNum+=1
@@ -39,5 +40,5 @@ for folder in folders:
         ## png 2 pdf
         c.drawImage(pngPath, 0, 0)
         c.showPage()
-
+print("正在生成pdf。。。")
 c.save()
