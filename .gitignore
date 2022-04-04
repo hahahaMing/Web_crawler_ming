@@ -1,6 +1,7 @@
 *.rar
 .idea
 *.jpg
+*.pdf
 old_version_code
 results
 temp
