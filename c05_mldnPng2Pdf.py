@@ -8,8 +8,11 @@ import json
 ##TODO: git 有一段把pdf传上去了，学习如何修改一下让他不传，注意不要丢代码
 pdfmetrics.registerFont(TTFont('Heiti', 'SimHei.ttf'))  #注册字体
 
-INPUT_FOLDER = r'D:\SelfStudy\Git\mldnNoWatermask'
-OUTPUT_FILE = r'D:\SelfStudy\Git\mldnNoWatermark.pdf'
+# INPUT_FOLDER = r'D:\SelfStudy\Git\mldnNoWatermask'
+# OUTPUT_FILE = r'D:\SelfStudy\Git\mldnNoWatermark.pdf'
+INPUT_FOLDER = r'D:\SelfStudy\Git\mldnNoAD'
+OUTPUT_FILE = r'D:\SelfStudy\Git\mldnNoAD.pdf'
+
 titleDict = {}
 with open(r'asset\c06\Titles.json','r')as f:
     titleDict = json.load(f)
